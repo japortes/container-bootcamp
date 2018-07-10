@@ -43,7 +43,7 @@ For the first container, we will be creating a Dockerfile from scratch. For the 
     ```
     cd ~/blackbelt-aks-hackfest/app/web
     
-    docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` --build-arg IMAGE_TAG_REF=v1 -t rating-web .
+    sudo docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` --build-arg IMAGE_TAG_REF=v1 -t rating-web .
     ```
 
 3. Validate image was created with `docker images`
@@ -57,7 +57,7 @@ In this step, the Dockerfile has been created for you.
     ```
     cd ~/blackbelt-aks-hackfest/app/api
 
-    docker build -t rating-api .
+    sudo docker build -t rating-api .
     ```
 
 2. Validate image was created with `docker images`
@@ -76,7 +76,7 @@ In this step, the Dockerfile has been created for you.
     ```
     cd ~/blackbelt-aks-hackfest/app/db
 
-    docker build -t rating-db .
+    sudo docker build -t rating-db .
     ```
 
 2. Validate image was created with `docker images`
