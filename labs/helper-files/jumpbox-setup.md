@@ -41,8 +41,19 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 Import the Microsoft repository key.
 * Run `sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc`
 
-Create local azure-cli repository information.
-* Run `sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'`
+## Install Azure CLI
+
+* Terminal: `sudo vi /etc/yum.repos.d/azure-cli.repo`
+
+* Add the following:
+
+```
+[azure-cli]
+name=Azure CLI
+baseurl=https://packages.microsoft.com/yumrepos/azure-cli/
+gpgcheck=1
+enabled=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 
 Install with the yum install command.
 * Run `sudo yum install azure-cli-2.0.23-1.el7` 
@@ -75,7 +86,7 @@ Install Kubectl command line utility to interact with AKS. There are two ways to
 
 First method:
 ```
-az aks install-cli
+sudo az aks install-cli
 ```
 
 Second method:
